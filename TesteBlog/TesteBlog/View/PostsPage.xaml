@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TesteBlog.View.PostsPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ListView  Margin="10,30,10,0" 
+                   x:Name="PostsList" 
+                   SeparatorVisibility="None" 
+                   VerticalOptions="FillAndExpand" 
+                   RowHeight="200"                    
+                   BackgroundColor="Transparent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Margin="0" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                            <Frame             
+                                VerticalOptions="FillAndExpand"                                      
+                                HorizontalOptions="FillAndExpand"
+                                CornerRadius="5"
+                                Margin="20,10"
+                                Padding="0"                                    
+                                BorderColor="#FFFFFF"                                               
+                                HasShadow="True" >
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="PostTapped"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Frame 
+                                        Margin="0"
+                                        Padding="0"
+                                        BackgroundColor="Transparent"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand">
+                                        <StackLayout>
+                                            <Grid HorizontalOptions="FillAndExpand"
+                                                  VerticalOptions="FillAndExpand"
+                                                  Margin="0"
+                                                  Padding="0"
+                                                  BackgroundColor="Transparent">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Label 
+                                                    Grid.Column="0"
+                                                    Grid.Row="0"
+                                                    Margin="10,2"
+                                                    Text="{Binding title}"
+                                                    FontSize="18"                                                                                                   
+                                                    BackgroundColor="Transparent"
+                                                    TextColor="#435357"                                               
+                                                    VerticalOptions="Start"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    VerticalTextAlignment="Start"
+                                                    HorizontalTextAlignment="Center"/>
+                                                <Label     
+                                                    Grid.Column="0"
+                                                    Grid.Row="1"
+                                                    Margin="10,0"
+                                                    FontSize="16" 
+                                                    Padding="0"
+                                                    VerticalOptions="Start"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalTextAlignment="Center"
+                                                    HorizontalTextAlignment="Center"                                                    
+                                                    TextColor="Black"
+                                                    Text="{Binding body}"/>
+                                                <Label 
+                                                    Grid.Column="0"
+                                                    Grid.Row="2"
+                                                    Margin="3,0"       
+                                                    Padding="0"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Start"
+                                                    VerticalTextAlignment="Center"
+                                                    HorizontalTextAlignment="Start"                                                   
+                                                    TextColor="Black"
+                                                    Text="{Binding userId,
+                                                    StringFormat='Usuário: {0}'}"
+                                                    FontSize="13"/>
+                                                <Label 
+                                                    Grid.Column="0"
+                                                    Grid.Row="2"
+                                                    Margin="3,0"       
+                                                    Padding="0"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="End"
+                                                    VerticalTextAlignment="Center"
+                                                    HorizontalTextAlignment="End"                                                   
+                                                    TextColor="Black"
+                                                    Text="{Binding id,
+                                                    StringFormat='Nº. do Post: {0}'}" 
+                                                    FontSize="13"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame >
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TesteBlog.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout VerticalOptions="Center">
+        <!-- Place new controls here -->
+        <Frame Padding="0" 
+                       Margin="30,40,30,40"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" 
+                       BorderColor="White"
+                       HeightRequest="44"   
+                       CornerRadius="10"
+                       HasShadow="True">
+            <Button x:Name="BtnEntrar" 
+                        Text="Login" 
+                        FontSize="19"                       
+                        VerticalOptions="FillAndExpand" 
+                        CornerRadius="10"
+                        HorizontalOptions="Fill"                          
+                        Margin="0"
+                        Padding="0"
+                        IsEnabled="true" 
+                        Clicked="BtnEntrar_Clicked"  
+                        BackgroundColor="#0C9ABE" 
+                        TextColor="White"/>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
